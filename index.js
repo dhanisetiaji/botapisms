@@ -6,11 +6,11 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 app.get('/',  async (req, res) => {
-    var text = "/apisms <br> query: pesan= & nohp= <br> method: POST and GET";
+    var text = "/apisms/v1 <b>GET</b><br>/apisms/v2 <b>POST</b><br><br>Query: pesan= & nohp=";
     res.send(text)
 })
 
-app.get('/apisms', async (req, res) => {
+app.get('/apisms/v1', async (req, res) => {
     if(!req.query.pesan || !req.query.nohp){
         res.send('Query required')
        }else{
@@ -24,10 +24,7 @@ app.get('/apisms', async (req, res) => {
         res.send(kirimpesan);
        }
 })
-app.post('/apisms', async (req, res) => {
-    if(!req.query.pesan || !req.query.nohp){
-        res.send('Query required')
-       }else{
+app.post('/apisms/v2', async (req, res) => {
         const {pesan, nohp} = req.query;
         const daftar  = await  apisms.Register();
         const getUsername = daftar.split(' ')[1];
@@ -36,7 +33,7 @@ app.post('/apisms', async (req, res) => {
         const getApi  = await  apisms.getApi(Cookie);
         const kirimpesan = await apisms.apisms(getApi, pesan, nohp);
         res.send(kirimpesan);
-       }
+       
 })
 
 app.listen(port, function(){
