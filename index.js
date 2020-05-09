@@ -25,6 +25,9 @@ app.get('/apisms/v1', async (req, res) => {
        }
 })
 app.post('/apisms/v2', async (req, res) => {
+    if(!req.query.pesan || !req.query.nohp){
+        res.send('Query required')
+       }else{
         const {pesan, nohp} = req.query;
         const daftar  = await  apisms.Register();
         const getUsername = daftar.split(' ')[1];
@@ -33,6 +36,7 @@ app.post('/apisms/v2', async (req, res) => {
         const getApi  = await  apisms.getApi(Cookie);
         const kirimpesan = await apisms.apisms(getApi, pesan, nohp);
         res.send(kirimpesan);
+       }
        
 })
 
