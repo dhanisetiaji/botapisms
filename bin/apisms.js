@@ -116,7 +116,7 @@ const getApi = (cookie) => new Promise((resolve, reject) => {
     .catch(err => reject(err))
 })
 
-const apisms = (api, pesan, nohp) => new Promise((resolve, reject) => {
+const apisms = (api,pesan, nohp) => new Promise((resolve, reject) => {
     const url = 'https://apisms.my.id/api/sms.php';
     const params = new URLSearchParams;
     params.append('api', `${api}`);
