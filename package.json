@@ -1,0 +1,37 @@
+{
+  "name": "apisms.my.id",
+  "version": "1.0.0",
+  "description": "Cara penggunaan\r - git clone\r - node index.js",
+  "main": "index.js",
+  "bin": {
+    "apisms.my.id": "apisms.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "node": "^14.2.0",
+    "node-fetch": "^2.6.0",
+    "readline-sync": "^1.4.10",
+    "url": "^0.11.0",
+    "useragent-generator": "^1.1.1-amkt-22079-finish.0",
+    "username-generator": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhanisetiaji/botapisms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhanisetiaji/botapisms/issues"
+  },
+  "homepage": "https://github.com/dhanisetiaji/botapisms#readme"
+}
